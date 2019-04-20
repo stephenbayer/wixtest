@@ -20,7 +20,7 @@
     <DirectoryRef Id="INSTALLFOLDER">
 
       <Component Id="TextFileComponent" Guid="7B0E9951-D655-4DA0-B0F9-59DF55DB6D42">
-         <File Source="redist\foo.txt" />
+         <File Source="redist\foo.txt" Name="bar.dat" />
       </Component>
 
     </DirectoryRef>
