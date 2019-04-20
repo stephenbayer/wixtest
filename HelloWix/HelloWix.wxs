@@ -29,7 +29,7 @@
       </Component>
 
       <Component Id="TextFileComponent3" Guid="49729341-B93D-467E-9A6E-4BF5F2D3D0AF">
-        <File Source="redist\foo.txt" Name="program_file2.dat" />
+        <File Source="redist\foo.txt" Name="program_file3.dat" />
       </Component>
 
     </ComponentGroup>
