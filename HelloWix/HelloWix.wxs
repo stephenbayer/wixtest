@@ -52,7 +52,7 @@
 
     <Feature Id="MainFeature" Title="HelloWix" Level="1">
       <ComponentGroupRef Id="Program"/>
-      <ComponentGroupRef Id="HelpFiles" />
+      <ComponentGroupRef Id="Docs" />
     </Feature>
 
   </Product>
