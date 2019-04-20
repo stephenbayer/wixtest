@@ -7,7 +7,7 @@
             Language="1033"
             UpgradeCode="3962e538-f049-4de3-82d4-1eed3b4dd0b8">
  
-    <Package Description="Hello Wix" Compressed="yes" />
+    <Package Description="Hello Wix" Compressed="yes" InstallScope="perMachine" />
     
     <MediaTemplate EmbedCab="yes" />
     
@@ -17,11 +17,17 @@
       </Directory>
     </Directory>
 
-    <Component Id="TextFileComponent" Directory="INSTALLFOLDER"  >
-       <File Source="redist\foo.txt" />
-    </Component>
+    <DirectoryRef Id="INSTALLFOLDER">
+
+      <Component Id="TextFileComponent" Guid="7B0E9951-D655-4DA0-B0F9-59DF55DB6D42">
+         <File Source="redist\foo.txt" />
+      </Component>
+
+    </DirectoryRef>
+
     <Feature Id="MainFeature" Title="HelloWix" Level="1">
       <ComponentRef Id="TextFileComponent" />
     </Feature>
+
   </Product>
 </Wix>
