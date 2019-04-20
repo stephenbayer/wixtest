@@ -13,7 +13,9 @@
     
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="INSTALLFOLDER" Name="HelloWix" />
+        <Directory Id="INSTALLFOLDER" Name="HelloWix" >
+          <Directory Id="DOCFOLDER" Name="Docs" />
+        </Directory>
       </Directory>
     </Directory>
 
@@ -25,8 +27,15 @@
 
     </DirectoryRef>
 
+    <DirectoryRef Id="DOCFOLDER">
+      <Component Id="HelpFileComponent" Guid="E551E511-979B-4D0D-A107-42688B30B5F5">
+        <File Source="redist\foo.txt" Name="foo_help.txt" />
+      </Component>
+    </DirectoryRef>
+
     <Feature Id="MainFeature" Title="HelloWix" Level="1">
       <ComponentRef Id="TextFileComponent" />
+      <ComponentRef Id="HelpFileComponent" />
     </Feature>
 
   </Product>
