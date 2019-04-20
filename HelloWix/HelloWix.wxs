@@ -19,23 +19,40 @@
       </Directory>
     </Directory>
 
-    <DirectoryRef Id="INSTALLFOLDER">
-
-      <Component Id="TextFileComponent" Guid="7B0E9951-D655-4DA0-B0F9-59DF55DB6D42">
-         <File Source="redist\foo.txt" Name="bar.dat" />
+    <ComponentGroup Id="Program" Directory="INSTALLFOLDER">
+      <Component Id="TextFileComponent1" Guid="7B0E9951-D655-4DA0-B0F9-59DF55DB6D42">
+         <File Source="redist\foo.txt" Name="program_file1.dat" />
       </Component>
 
-    </DirectoryRef>
-
-    <DirectoryRef Id="DOCFOLDER">
-      <Component Id="HelpFileComponent" Guid="E551E511-979B-4D0D-A107-42688B30B5F5">
-        <File Source="redist\foo.txt" Name="foo_help.txt" />
+      <Component Id="TextFileComponent2" Guid="DD5C512D-6071-42BE-84B6-A3B197FAAC34">
+        <File Source="redist\foo.txt" Name="program_file2.dat" />
       </Component>
-    </DirectoryRef>
+
+      <Component Id="TextFileComponent3" Guid="49729341-B93D-467E-9A6E-4BF5F2D3D0AF">
+        <File Source="redist\foo.txt" Name="program_file2.dat" />
+      </Component>
+
+    </ComponentGroup>
+
+    <ComponentGroup Id="Docs" Directory="DOCFOLDER">
+      <Component Id="HelpFile1Component" Guid="E551E511-979B-4D0D-A107-42688B30B5F5">
+        <File Source="redist\foo.txt" Name="foo_help1.txt" />
+      </Component>
+      <Component Id="HelpFile2Component" Guid="BB1C6480-87F8-43AA-A152-DEA3FFB5C64F">
+        <File Source="redist\foo.txt" Name="foo_help2.txt" />
+      </Component>
+
+      <Component Id="HelpFile3Component" Guid="967AA664-783A-4817-AE63-88B0593ADCC3">
+        <File Source="redist\foo.txt" Name="foo_help3.txt" />
+      </Component>
+
+
+    </ComponentGroup>
+
 
     <Feature Id="MainFeature" Title="HelloWix" Level="1">
-      <ComponentRef Id="TextFileComponent" />
-      <ComponentRef Id="HelpFileComponent" />
+      <ComponentGroupRef Id="Program"/>
+      <ComponentGroupRef Id="HelpFiles" />
     </Feature>
 
   </Product>
