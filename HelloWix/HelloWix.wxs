@@ -33,7 +33,7 @@
         <File Source="redist\foo.txt" Name="program_file3.dat" />
       </Component>
 
-      <Component Id="TextFileComponent3" Guid="FE9F28F7-701A-4379-B98D-20524D5BDBAB">
+      <Component Id="TextFileComponent4" Guid="FE9F28F7-701A-4379-B98D-20524D5BDBAB">
         <File Source="redist\foo.txt" Name="program_file4.dat" />
       </Component>
     </ComponentGroup>
