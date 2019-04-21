@@ -8,6 +8,7 @@
             UpgradeCode="3962e538-f049-4de3-82d4-1eed3b4dd0b8">
  
     <Package Description="Hello Wix" Compressed="yes" InstallScope="perMachine" />
+    <WixVariable Id="WixUILicenseRtf" Value="redist\license.rtf"/>
     
     <MediaTemplate EmbedCab="yes" />
     
@@ -32,6 +33,9 @@
         <File Source="redist\foo.txt" Name="program_file3.dat" />
       </Component>
 
+      <Component Id="TextFileComponent3" Guid="FE9F28F7-701A-4379-B98D-20524D5BDBAB">
+        <File Source="redist\foo.txt" Name="program_file4.dat" />
+      </Component>
     </ComponentGroup>
 
     <ComponentGroup Id="Docs" Directory="DOCFOLDER">
@@ -54,6 +58,8 @@
       <ComponentGroupRef Id="Program"/>
       <ComponentGroupRef Id="Docs" />
     </Feature>
+
+    <UIRef Id="WixUI_FeatureTree" />
 
   </Product>
 </Wix>
